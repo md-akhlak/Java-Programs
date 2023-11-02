@@ -27,9 +27,5 @@ public class loopsInJava {
             x++;
         } while (x < 10);
 
-
-
-        
-
     }
 }
