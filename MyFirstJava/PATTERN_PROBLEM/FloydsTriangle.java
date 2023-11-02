@@ -1,21 +1,16 @@
 package PATTERN_PROBLEM;
 
-public class InvertPyramid {
+public class FloydsTriangle {
     public static void main(String[] args) {
         int n = 5;
+        int num = 1;
 
         for (int i = 1; i <= n; i++) {
-            // for print space " "
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print("  ");
-            }
-            // for print *
             for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
+                System.out.print(num + " ");
+                num++;
             }
             System.out.println();
         }
-
     }
-
 }

@@ -1,21 +1,19 @@
 package PATTERN_PROBLEM;
 
-public class InvertPyramid {
+public class Print_0_1_Triangle {
     public static void main(String[] args) {
         int n = 5;
 
         for (int i = 1; i <= n; i++) {
-            // for print space " "
-            for (int j = 1; j <= n - i; j++) {
-                System.out.print("  ");
-            }
-            // for print *
             for (int j = 1; j <= i; j++) {
-                System.out.print("* ");
+                int sum = i + j;
+                if (sum % 2 == 0) {
+                    System.out.print("1 ");
+                } else {
+                    System.out.print("0 ");
+                }
             }
             System.out.println();
         }
-
     }
-
 }
