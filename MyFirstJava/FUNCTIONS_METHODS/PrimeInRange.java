@@ -36,5 +36,7 @@ public class PrimeInRange {
         int n = in.nextInt();
 
         primeinRange(n);
+
+        in.close();
     }
 }

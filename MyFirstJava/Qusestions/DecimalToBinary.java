@@ -33,5 +33,7 @@ public class DecimalToBinary {
 
         decToBinary(decNum);
 
+        sc.close();
+
     }
 }

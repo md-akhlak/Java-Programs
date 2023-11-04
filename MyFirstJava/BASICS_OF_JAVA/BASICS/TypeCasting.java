@@ -16,18 +16,13 @@ public class TypeCasting {
         char ch = 'a';
         int num = ch;
 
-
-
-        
         System.out.println(num);
 
         byte x = 10;
-        x = (byte)(x*2);
+        x = (byte) (x * 2);
         System.out.println(x);
 
-
-
-
+        sc.close();
 
     }
 

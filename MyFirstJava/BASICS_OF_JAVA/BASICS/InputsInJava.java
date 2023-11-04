@@ -1,7 +1,7 @@
 package BASICS_OF_JAVA.BASICS;
 
 import java.util.Scanner;  // package for Scanner class input
-import java.util.*; // package for all Java classes 
+// import java.util.*; // package for all Java classes 
 
 
 
@@ -20,6 +20,8 @@ public class InputsInJava {
         8- nextShort()
         9- nextLong()
         */
+
+        input.close();
 
         
 

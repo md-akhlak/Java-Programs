@@ -33,5 +33,7 @@ public class BinomialCoefficient {
 
         System.out.println(binCoeff(n, r));
 
+        in.close();
+
     }
 }

@@ -1,7 +1,7 @@
 package BASICS_OF_JAVA.BASICS;
 
 import java.util.Scanner;
-import java.util.*;
+// import java.util.*;
 
 // It is also called Implicit conversion
 public class TypeConversion {
@@ -25,6 +25,8 @@ public class TypeConversion {
         float f = sc.nextInt();
 
         System.out.println(f);
+
+        sc.close();
 
     }
 }

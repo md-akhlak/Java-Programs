@@ -9,8 +9,8 @@ public class CheckPrime {
         if (n == 2) {
             return true;
         }
-//      Optimied way to check number is prime or not.
-        for (int i = 2; i <= Math.sqrt(n); i++) {      // we can also use (n - 1) insted of Math.sqrt(n);
+        // Optimied way to check number is prime or not.
+        for (int i = 2; i <= Math.sqrt(n); i++) { // we can also use (n - 1) insted of Math.sqrt(n);
             if (n % i == 0) {
                 return false;
             }
@@ -26,5 +26,6 @@ public class CheckPrime {
         int n = sc.nextInt();
         System.out.println(isPrime(n));
 
+        sc.close();
     }
 }

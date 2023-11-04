@@ -29,5 +29,7 @@ public class BinaryToDecimal {
 
         binTOdec(bin);
 
+        sc.close();
+
     }
 }

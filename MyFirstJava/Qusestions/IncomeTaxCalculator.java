@@ -20,5 +20,8 @@ public class IncomeTaxCalculator {
 
         System.out.print("Your tax is : " + tax);
 
+
+        sc.close();
+
     }
 }

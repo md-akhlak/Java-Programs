@@ -22,7 +22,7 @@ public class PalindronePattern {
 
     public static void main(String[] args) {
 
-        palindromeNumber(8);
+        palindromeNumber(3);
 
     }
 }

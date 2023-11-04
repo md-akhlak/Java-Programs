@@ -13,6 +13,10 @@ public class SumOf_n_nat_num {
             sum += i;
         }
         System.out.println("The sum of first n naturals : " + sum);
+
+
+
+        input.close();
     }
 
 }

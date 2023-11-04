@@ -22,5 +22,7 @@ public class Factorial {
         int fact = factorial(n);
         System.out.println(fact);
 
+        sc.close();
+
     }
 }

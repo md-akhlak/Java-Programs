@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class BreakContinue {
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         for (int i = 0; i < 10; i++) {
             if (i == 5) {
                 break;
@@ -12,9 +13,6 @@ public class BreakContinue {
         }
         System.out.println();
         // question
-
-        Scanner sc = new Scanner(System.in);
-
         do {
             System.out.print("Enter number : ");
             int n = sc.nextInt();
@@ -45,6 +43,8 @@ public class BreakContinue {
             }
 
         } while (true);
+
+        // sc.close();
 
     }
 }

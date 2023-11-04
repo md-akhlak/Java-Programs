@@ -18,5 +18,7 @@ public class Methods {
 
         calculateSum(a, b); // arguments or actual parameters
 
+        input.close();
+
     }
 }
