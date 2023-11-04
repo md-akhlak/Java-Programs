@@ -2,19 +2,22 @@ package ARRAYS;
 
 public class BinarySearch {
 
-    public static int binarySearch(int arr[], int l, int h, int key) {
-        int mid;
-        while (l <= h) {
-            mid = (l + h) / 2;
+    public static int binarySearch(int arr[], int key) {
+        int low = 0;
+        int high = arr.length - 1;
 
+        while (low <= high) {
+            int mid = (low + high) / 2;
+            // comparision
             if (key == arr[mid]) {
                 return mid;
-            } else if (key < arr[mid]) {
-                h = mid - 1;
+            } else if (arr[mid] < key) {
+                low = mid + 1;
             } else {
-                l = mid + 1;
+                high = mid - 1;
             }
         }
+        // Time complesity : O(log n);
 
         return -1;
     }
@@ -23,7 +26,7 @@ public class BinarySearch {
 
         int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
-        System.out.println(binarySearch(arr, 1, arr.length - 1, 6));
+        System.out.println("The index for key is : " + binarySearch(arr, 7)); //
 
     }
 }
