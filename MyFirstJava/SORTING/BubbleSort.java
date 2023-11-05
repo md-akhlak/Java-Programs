@@ -1,4 +1,4 @@
-package SORTING_ALGO;
+package SORTING;
 
 import java.util.Scanner;
 
