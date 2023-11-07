@@ -18,7 +18,7 @@ public class SearchEleInSortedMat {
     }
 
     // optimised search algorithm
-    public static boolean starSearchMatrix(int mat[][], int key) {
+    public static boolean stairSearchMatrix(int mat[][], int key) {
         int row = 0;
         int col = mat[0].length - 1;
 
@@ -45,7 +45,7 @@ public class SearchEleInSortedMat {
                 { 13, 14, 15, 16 } };
 
         // System.out.println(searchMat(mat, 12));
-        System.out.println(starSearchMatrix(mat, 7));
+        System.out.println(stairSearchMatrix(mat, 7));
 
     }
 }
