@@ -44,7 +44,5 @@ public class BreakContinue {
 
         } while (true);
 
-        // sc.close();
-
     }
 }
