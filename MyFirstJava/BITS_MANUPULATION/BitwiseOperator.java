@@ -38,7 +38,7 @@ public class BitwiseOperator {
 
         System.out.println(5 << 2); // 20
 
-        // 6-> Binary right Swift : >>
+        // 6-> Binary right Swift : >> [a/2^b]
 
         System.out.println(6 >> 1); // 3
 
