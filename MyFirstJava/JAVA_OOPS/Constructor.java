@@ -1,6 +1,5 @@
 package JAVA_OOPS;
 
-
 /*
 Constructor is a special method invoked automatically  at the time of
 object creation.
@@ -34,8 +33,7 @@ class Student {
         this.name = name;
         // System.out.println("parameterised constructor is called");
     }
+
     
-
-
 
 }
