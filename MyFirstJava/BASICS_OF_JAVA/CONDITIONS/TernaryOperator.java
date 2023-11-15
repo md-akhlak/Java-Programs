@@ -9,7 +9,6 @@ public class TernaryOperator {
         int num = 5;
 
         String type = ((num % 2) == 0) ? "even" : "odd";
-        
 
         System.out.println(type);
     }

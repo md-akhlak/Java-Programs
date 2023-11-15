@@ -6,19 +6,18 @@ import java.util.Scanner;
 // It is also called Implicit conversion
 public class TypeConversion {
     public static void main(String[] args) {
-        
+
         Scanner sc = new Scanner(System.in);
 
-
         /*
-        Conversion happens when :
-        a- type compatible
-        b- destination type > source type
-
-
-        byte->short->int->float->long->double.  // stored in -> arrow type
-
-        */
+         * Conversion happens when :
+         * a- type compatible
+         * b- destination type > source type
+         * 
+         * 
+         * byte->short->int->float->long->double. // stored in -> arrow type
+         * 
+         */
 
         System.out.println("enter number  ");
 
