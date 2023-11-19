@@ -8,6 +8,10 @@ public class Inheritance {
         l1.animalName();
         // l1.eat();
 
+
+
+        
+
     }
 }
 
