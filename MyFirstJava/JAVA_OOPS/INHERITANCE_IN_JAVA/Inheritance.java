@@ -1,4 +1,4 @@
-package JAVA_OOPS;
+package JAVA_OOPS.INHERITANCE_IN_JAVA;
 
 public class Inheritance {
     public static void main(String[] args) {
@@ -7,10 +7,6 @@ public class Inheritance {
         // l1.color();
         l1.animalName();
         // l1.eat();
-
-
-
-        
 
     }
 }
@@ -33,3 +29,10 @@ class Lion extends Animal {
         System.out.println("eats meat");
     }
 }
+
+/*
+ * -> Single Inheritance
+ * -> Multi Level Inheritance
+ * -> Hierarchy Inheritance
+ * -> Hybrid Inheritance
+ */

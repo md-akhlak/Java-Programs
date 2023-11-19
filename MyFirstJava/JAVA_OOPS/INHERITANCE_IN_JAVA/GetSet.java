@@ -1,4 +1,4 @@
-package JAVA_OOPS;
+package JAVA_OOPS.INHERITANCE_IN_JAVA;
 
 // this keyword is used to refer to the current object 
 

@@ -1,4 +1,4 @@
-package JAVA_OOPS;
+package JAVA_OOPS.CONSTRUCTOR;
 
 public class CopyConstructor {
     public static void main(String[] args) {
