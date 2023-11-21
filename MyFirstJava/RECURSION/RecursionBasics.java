@@ -115,10 +115,21 @@ public class RecursionBasics {
         if (n == 0) {
             return 1;
         }
+
+        // for even scenarios
+        // int halfpow = optimisedPower(m, n / 2);
+        // int halfPowSq = halfpow * halfpow;
+        // // for odd scenarios
+        // if (n % 2 != 0) {
+        // halfPowSq = m * halfPowSq;
+        // }
+        // return halfPowSq;
+
         if (n % 2 == 0) {
             return optimisedPower(m * m, n / 2);
-        } else
-            return optimisedPower(m * m, (n - 1) / 2);
+        } else {
+            return optimisedPower(m * m, (n - 1) / 2) * m;
+        }
 
     }
 
@@ -138,9 +149,8 @@ public class RecursionBasics {
         System.out.println(lastOuccurence(arr, 5, 0));
 
         System.out.println(power(2, 5));
-        System.out.println(optimisedPower(2, 5));
+        System.out.println(optimisedPower(2, 10));
 
-        
     }
 
 }
