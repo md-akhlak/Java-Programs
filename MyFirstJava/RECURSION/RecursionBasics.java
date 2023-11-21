@@ -73,6 +73,55 @@ public class RecursionBasics {
         return isSorted(arr, start + 1);
     }
 
+    // first ouccurence
+    public static int firstOuccurence(int arr[], int key, int i) {
+        if (i == arr.length) {
+            return -1;
+        }
+        if (arr[i] == key) {
+            return i;
+        }
+
+        return firstOuccurence(arr, key, i + 1);
+    }
+
+    // last ouccurence
+    public static int lastOuccurence(int arr[], int key, int i) {
+        if (i == arr.length) {
+            return -1;
+        }
+        int isFound = lastOuccurence(arr, key, i + 1);
+        if (isFound == -1 && arr[i] == key) {
+            return i;
+        }
+        return isFound;
+    }
+
+    // power using recursion , time complexity O(n);
+    public static int power(int m, int n) {
+        if (n == 0) {
+            return 1;
+        }
+
+        // int x = power(m, n - 1);
+        // int y = m * x;
+        // return y;
+
+        return power(m, n - 1) * m;
+    }
+
+    // optimised power using recursion , time complexity :- O(log(n));
+    public static int optimisedPower(int m, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        if (n % 2 == 0) {
+            return optimisedPower(m * m, n / 2);
+        } else
+            return optimisedPower(m * m, (n - 1) / 2);
+
+    }
+
     public static void main(String[] args) {
         int num = 5;
         decreasingNum(num);
@@ -83,8 +132,15 @@ public class RecursionBasics {
         System.out.println(naturalSum(num));
         System.out.println(fib(num));
 
-        int arr[] = { 7, 8, 9 };
+        int arr[] = { 1, 2, 3, 4, 5, 7, 5, 5, 6, 7, 5, 2 };
         System.out.println(isSorted(arr, 0));
+        System.out.println(firstOuccurence(arr, 5, 0));
+        System.out.println(lastOuccurence(arr, 5, 0));
+
+        System.out.println(power(2, 5));
+        System.out.println(optimisedPower(2, 5));
+
+        
     }
 
 }
