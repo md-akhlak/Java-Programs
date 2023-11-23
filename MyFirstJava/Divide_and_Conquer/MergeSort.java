@@ -11,7 +11,7 @@ public class MergeSort {
         // work
         mergingSort(arr, start, mid);
         mergingSort(arr, mid + 1, end);
-
+        merging(arr, end, mid, mid);
     }
 
     public static void merging(int arr[], int start, int mid, int end) {
@@ -50,11 +50,10 @@ public class MergeSort {
         int mid = si + (ei - si) / 2;
         mergeSort(arr, si, mid); // left part
         mergeSort(arr, mid + 1, ei); // right part
-
         merge(arr, si, mid, ei);
     }
 
-    // merger function
+    // merge function
     public static void merge(int arr[], int si, int mid, int ei) {
         int temp[] = new int[ei - si + 1];
         int i = si; // iterator for left part
@@ -108,6 +107,5 @@ public class MergeSort {
 
         mergingSort(arr, 0, arr.length - 1);
         displayArray(arr);
-
     }
 }
