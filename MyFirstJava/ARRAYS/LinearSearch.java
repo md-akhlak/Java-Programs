@@ -5,7 +5,7 @@ public class LinearSearch {
     public static int linearSearch(int num[], int key) {
         for (int i = 0; i < num.length; i++) {
             if (key == num[i]) {
-                System.out.println("index at : " + i);
+                System.out.println("key at index : " + i);
                 return num[i];
             }
         }
@@ -22,7 +22,7 @@ public class LinearSearch {
         if (index == -1) {
             System.out.println("Key not found : " + key);
         } else {
-            System.out.println("Key found : " + index);
+            System.out.println("Key is : " + index);
         }
     }
 }
