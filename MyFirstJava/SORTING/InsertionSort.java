@@ -6,15 +6,14 @@ public class InsertionSort {
         for (int i = 1; i < arr.length; i++) {
             int curr = arr[i];
             int prev = i - 1;
+            // finding out the currect position to insert
             while (prev >= 0 && arr[prev] > curr) {
                 arr[prev + 1] = arr[prev];
                 prev--;
             }
             // insertion
             arr[prev + 1] = curr;
-
         }
-
     }
 
     public static void display(int arr[]) {
