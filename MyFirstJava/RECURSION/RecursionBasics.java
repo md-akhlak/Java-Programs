@@ -237,7 +237,7 @@ public class RecursionBasics {
 
         System.out.println("Power: " + power(2, 5));
 
-        System.out.println("Find power: " + optimisedPower(2, 10));
+        System.out.println("optimied power: " + optimisedPower(2, 10));
 
         System.out.println("Nested Recursion: " + nestedRecursion(95));
 

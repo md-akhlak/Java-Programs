@@ -14,8 +14,8 @@ public class MaxMin {
                 smallest = number[i];
             }
         }
-        System.out.println("Smallest: " + smallest);
-        System.out.print("Largest: ");
+        System.out.println("Smallest value : " + smallest);
+        System.out.print("Largest value is : ");
         return largest;
     }
 
