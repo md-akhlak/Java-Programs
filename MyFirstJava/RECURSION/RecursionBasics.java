@@ -9,12 +9,10 @@ public class RecursionBasics {
 
     // print decreasing
     public static void decreasingNum(int n) {
-        if (n == 1) {
+        if (n > 0) {
             System.out.print(n + " ");
-            return;
+            decreasingNum(n - 1);
         }
-        System.out.print(n + " ");
-        decreasingNum(n - 1);
     }
 
     // print number in increasing order
@@ -133,6 +131,15 @@ public class RecursionBasics {
 
     }
 
+    public static void tOH(int n, String A, String B, String C) {
+        if (n == 0) {
+            return;
+        }
+        tOH(n - 1, A, C, B);
+        System.out.println(A + " -> " + C);
+        tOH(n - 1, B, A, C);
+    }
+
     public static void main(String[] args) {
         int num = 5;
         decreasingNum(num);
@@ -150,6 +157,8 @@ public class RecursionBasics {
 
         System.out.println(power(2, 5));
         System.out.println(optimisedPower(2, 10));
+
+        tOH(3, "A", "B", "C");
 
     }
 
