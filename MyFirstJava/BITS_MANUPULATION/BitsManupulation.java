@@ -3,8 +3,8 @@ package BITS_MANUPULATION;
 public class BitsManupulation {
 
     public static int getBit(int n, int i) {
-        int bitMast = 1 << i;
-        if ((n & bitMast) == 0) {
+        int bitMask = 1 << i;
+        if ((n & bitMask) == 0) {
             return 0;
         } else {
             return 1;
@@ -12,13 +12,13 @@ public class BitsManupulation {
     }
 
     public static int setBit(int n, int i) {
-        int bitMast = 1 << i;
-        return n | bitMast;
+        int bitMask = 1 << i;
+        return n | bitMask;
     }
 
     public static int clearBit(int n, int i) {
-        int bitMast = ~(1 << i);
-        return n & bitMast;
+        int bitMask = ~(1 << i);
+        return n & bitMask;
     }
 
     public static int updateBit(int n, int i, int newBit) {
@@ -42,6 +42,12 @@ public class BitsManupulation {
         System.out.println(clearBit(10, 1));
 
         System.out.println(updateBit(10, 2, 1));
+
+        
+
+        int a = 4;
+        int b = 2;
+        System.out.println(a | b);
 
     }
 }
