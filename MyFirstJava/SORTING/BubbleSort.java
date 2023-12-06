@@ -45,6 +45,7 @@ public class BubbleSort {
         System.out.println();
         bubbleSort(arr);
         displayResult(arr);
+        
 
         sc.close();
     }

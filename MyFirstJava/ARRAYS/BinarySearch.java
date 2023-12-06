@@ -21,30 +21,32 @@ public class BinarySearch {
         return -1;
     }
 
-    public static int binSearch(int arr[], int key) {
-        int start = 0;
-        int end = arr.length - 1;
-        while (start <= end) {
-            int mid = start + (end - start) / 2;
+    // using binary search
+    public static int recBinSearch(int arr[], int start, int end, int key) {
+        int mid = start + (end - start) / 2;
+
+        if (start <= end) {
+
             if (key == arr[mid]) {
                 return mid;
-            } else if (key > arr[mid]) {
-                start = mid + 1;
+            }
+            if (key > arr[mid]) {
+                return recBinSearch(arr, mid + 1, end, key);
             } else {
-                end = mid - 1;
+                return recBinSearch(arr, start, mid - 1, key);
             }
         }
-
-        return -1;
+        return 99;
     }
 
+    
     public static void main(String[] args) {
 
-        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8, };
+        int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
-        System.out.println("The index for key is : " + binarySearch(arr, 7)); //
+        System.out.println("The index for key is : " + binarySearch(arr, 7));
 
-        System.out.println("The index for key is : " + binSearch(arr, 10));
+        System.out.println("Binary Search using recursion : " + recBinSearch(arr, 0, arr.length - 1, 88));
 
     }
 }
