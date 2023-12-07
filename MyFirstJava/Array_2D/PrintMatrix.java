@@ -43,11 +43,19 @@ public class PrintMatrix {
 
     public static void main(String[] args) {
 
-        int mat[][] = new int[3][3];
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter row : ");
+        int row = sc.nextInt();
+        System.out.print("Enter column : ");
+        int column = sc.nextInt();
+
+        int mat[][] = new int[row][column];
 
         matrixInput(mat);
         matrixOutput(mat);
         searchElements(mat, 6);
+
+        sc.close();
 
     }
 }

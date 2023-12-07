@@ -1,5 +1,7 @@
 package ARRAYS;
 
+import java.util.*;
+
 public class BinarySearch {
 
     public static int binarySearch(int arr[], int key) {
@@ -39,14 +41,26 @@ public class BinarySearch {
         return 99;
     }
 
-    
     public static void main(String[] args) {
+
+        int array[] = new int[5];
+        Scanner sc = new Scanner(System.in);
+        for (int i = 0; i < array.length; i++) {
+            System.out.println("Enter the Element at index ");
+            array[i] = sc.nextInt();
+        }
+
+        for (int i = 0; i < array.length; i++) {
+            System.out.print(array[i] + " ");
+        }
 
         int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
 
         System.out.println("The index for key is : " + binarySearch(arr, 7));
 
         System.out.println("Binary Search using recursion : " + recBinSearch(arr, 0, arr.length - 1, 88));
+
+        sc.close();
 
     }
 }
