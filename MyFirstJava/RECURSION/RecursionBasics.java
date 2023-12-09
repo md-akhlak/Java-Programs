@@ -181,8 +181,6 @@ public class RecursionBasics {
 
     // taylor series
     public static double taylorSeries(int x, int n) {
-
-        
         double p = 1;
         double f = 1;
         double r;

@@ -49,11 +49,31 @@ public class PrintMatrix {
         System.out.print("Enter column : ");
         int column = sc.nextInt();
 
-        int mat[][] = new int[row][column];
+        // int mat[][] = new int[row][column];
 
-        matrixInput(mat);
-        matrixOutput(mat);
-        searchElements(mat, 6);
+        // matrixInput(mat);
+        // matrixOutput(mat);
+        // searchElements(mat, 6);
+
+        int matrix[][] = new int[row][column];
+        int zeros = 0;
+
+        System.out.println("Enter the elements of the matrix");
+        for (int i = 0; i < row; i++) {
+            for (int j = 0; j < column; j++) {
+                matrix[i][j] = sc.nextInt();
+                if (matrix[i][j] == 0)
+                    zeros++;
+            }
+        }
+
+        matrixOutput(matrix);
+
+        if (zeros > (row * column) / 2) {
+            System.out.println("The matrix is sparse matrix");
+        } else {
+            System.out.println("The matrix is not sparse matrix");
+        }
 
         sc.close();
 
