@@ -7,28 +7,62 @@ package JAVA_OOPS.INTERFACES;
  * -> Variables in the interface are final,, public and static. 
  */
 
+interface Student {
+    public void roll(int x);
+
+    public void show();
+}
+
+interface CSE {
+    public void roll(int x);
+
+    public void show();
+}
+
+abstract class First {
+
+}
+
+class newStu extends First implements Student, CSE {
+    public void roll(int x) {
+        System.out.println("Roll is roll: " + x);
+    }
+
+    public void show() {
+        System.out.println("Show method called");
+    }
+}
+
 public class Interface {
     public static void main(String[] args) {
         Omnivours o1 = new Omnivours();
-        o1.eatHerbs();
-        o1.eatMeat();
+        o1.eatHerbs("green");
+        o1.eatMeat("Fresh");
+
+
+
+
+        newStu s1 = new newStu();
+        s1.roll(3);
+        s1.show();
+
     }
 }
 
 interface Herbivours {
-    void eatHerbs();
+    void eatHerbs(String f);
 }
 
 interface Carnivours {
-    void eatMeat();
+    void eatMeat(String e);
 }
 
 class Omnivours implements Herbivours, Carnivours {
-    public void eatHerbs() {
-        System.out.println("eat grass");
+    public void eatHerbs(String f) {
+        System.out.println("eat grass " + f);
     }
 
-    public void eatMeat() {
-        System.out.println("eats meat");
+    public void eatMeat(String r) {
+        System.out.println("eats meat " + r);
     }
 }

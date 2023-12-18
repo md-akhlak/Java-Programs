@@ -13,19 +13,38 @@ package JAVA_OOPS.ABSTRACTION;
  * -> can have constructor
  */
 
+abstract class Student {
+    public void name(String name) {
+        System.out.println("The name is : " + name);
+    }
+
+    abstract void roll(int roll);
+}
+
+class Identity extends Student {
+    public void roll(int roll) {
+        System.out.println("roll is : " + roll);
+    }
+}
+
 public class AbsractionInJava {
     public static void main(String[] args) {
-        Horse h1 = new Horse();
-        h1.eat();
-        h1.walk();
-        h1.color = "red";
-        System.out.println(h1.color);
+        // Horse h1 = new Horse();
+        // h1.eat();
+        // h1.walk();
+        // h1.color = "red";
+        // System.out.println(h1.color);
 
-        Chicken c1 = new Chicken();
-        c1.eat();
-        c1.walk();
-        c1.color = "pink";
-        System.out.println(c1.color);
+        // Chicken c1 = new Chicken();
+        // c1.eat();
+        // c1.walk();
+        // c1.color = "pink";
+        // System.out.println(c1.color);
+
+        Identity i = new Identity();
+        i.name("AKhlak");
+        i.roll(2);
+
     }
 }
 
