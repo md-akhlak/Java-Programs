@@ -4,6 +4,10 @@ public class PrintStringSubset {
 
     public static void printSubset(String str, String ans, int i) {
         // base case
+        if (i > str.length()) {
+            return;
+        }
+
         if (i == str.length()) {
             if (ans.length() == 0) {
                 System.out.println("null");
@@ -21,7 +25,7 @@ public class PrintStringSubset {
     }
 
     public static void main(String[] args) {
-        String str = "AB";
+        String str = "ABC";
         printSubset(str, "", 0);
     }
 }
