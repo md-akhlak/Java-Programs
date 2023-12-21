@@ -16,8 +16,11 @@ public class QuickSort {
         quickSort(arr, pIdx + 1, ei);
     }
 
+    // worst case time complexity when pivot is last element the array is sorted
     public static int partition(int arr[], int si, int ei) {
-        int pivot = arr[ei];
+        int mid = si + (ei - si) / 2;
+
+        int pivot = arr[mid];
         int i = si - 1;
 
         for (int j = si; j < ei; j++) {
@@ -46,7 +49,7 @@ public class QuickSort {
     }
 
     public static void main(String[] args) {
-        int arr[] = { 6, 2, 4, 5, 3, 1, 8, 9, 7 };
+        int arr[] = { 2, 4, 5, 1, 3, 4, 2, 4, 6, 7, 9, 3, 2 };
         quickSort(arr, 0, arr.length - 1);
         display(arr);
     }
