@@ -35,16 +35,27 @@ class newStu extends First implements Student, CSE {
 
 public class Interface {
     public static void main(String[] args) {
-        Omnivours o1 = new Omnivours();
-        o1.eatHerbs("green");
-        o1.eatMeat("Fresh");
+        // Omnivours o1 = new Omnivours();
+        // o1.eatHerbs("green");
+        // o1.eatMeat("Fresh");
+
+        // newStu s1 = new newStu();
+        // s1.roll(3);
+        // s1.show();
+
+
+        GPS obj = new SmartPhone();
+
+        obj.getCamera();
+        obj.getGPS();
+        obj.getNetworks();
+        obj.getWIFI();
+        obj.getClass();
 
 
 
 
-        newStu s1 = new newStu();
-        s1.roll(3);
-        s1.show();
+
 
     }
 }
@@ -65,4 +76,40 @@ class Omnivours implements Herbivours, Carnivours {
     public void eatMeat(String r) {
         System.out.println("eats meat " + r);
     }
+}
+
+
+
+
+
+
+interface CellPhone {
+    void getNetworks();
+    void getCamera();
+
+}
+
+interface GPS extends CellPhone {
+    void getGPS();
+    void getWIFI();
+    
+}
+
+class SmartPhone implements GPS {
+    public void getNetworks() {
+        System.err.println("start netword");
+    }
+
+    public void getCamera() {
+        System.err.println("Open camera");
+    }
+
+    public void getGPS() {
+        System.out.println("Open gps");
+    }
+
+    public void getWIFI() {
+        System.err.println("Open wifi");
+    }
+
 }

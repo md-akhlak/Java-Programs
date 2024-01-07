@@ -1,6 +1,6 @@
 package LINKED_LIST;
 
-public class BasicsOfLinkedList {
+public class SInglyLinkedList {
     public static class Node {
         int data;
         Node next;
@@ -87,33 +87,33 @@ public class BasicsOfLinkedList {
 
     }
 
-    // public void insert(int index, int value) {
-    // Node node = new Node(value);
-    // Node temp = head;
-    // int i = 0;
+    public void insert(int index, int value) {
+        Node node = new Node(value);
+        Node temp = head;
+        int i = 0;
 
-    // if (head == null) {
-    // head = tail = node;
-    // return;
-    // }
+        if (head == null) {
+            head = tail = node;
+            return;
+        }
+        // insert at first position
+        if (index == 0) {
+            node.next = head;
+            head = node;
+            size = 0;
+            return;
+        }
+        // insert at any position
+        while (i < index - 1) {
+            temp = temp.next;
+            i++;
+        }
 
-    // if (index == 0) {
-    // node.next = head;
-    // head = node;
-    // size = 0;
-    // return;
-    // }
+        node.next = temp.next;
+        temp.next = node;
+        size++;
 
-    // while (i < index - 1) {
-    // temp = temp.next;
-    // i++;
-    // }
-
-    // node.next = temp.next;
-    // temp.next = node;
-    // size++;
-
-    // }
+    }
 
     public int deleteFirstNode() {
         Node temp = head;
@@ -135,14 +135,10 @@ public class BasicsOfLinkedList {
         }
 
         if (pos == 1) {
-            p = head;
             val = p.data;
             head = head.next;
             size = 0;
         } else {
-
-            p = head;
-            q = null;
 
             for (int i = 0; i < pos - 1; i++) {
                 q = p;
@@ -215,6 +211,7 @@ public class BasicsOfLinkedList {
         return -1;
     }
 
+    // healper function for recursive search
     public static int healper(Node head, int key) {
         if (head == null) {
             return -1;
@@ -234,10 +231,12 @@ public class BasicsOfLinkedList {
 
     }
 
+    // recursive function
     public static int recSearch(int key) {
         return healper(head, key);
     }
 
+    // remove nodes
     public int removeFirst() {
 
         if (size == 0) {
@@ -284,7 +283,7 @@ public class BasicsOfLinkedList {
     }
 
     public static void main(String[] args) {
-        BasicsOfLinkedList ll = new BasicsOfLinkedList();
+        SInglyLinkedList ll = new SInglyLinkedList();
 
         // add first
         // ll.printLL();

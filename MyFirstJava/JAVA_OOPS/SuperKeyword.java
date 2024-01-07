@@ -11,24 +11,25 @@ package JAVA_OOPS;
 
 public class SuperKeyword {
     public static void main(String[] args) {
-        Horse h1 = new Horse();
-        // h1.color = "white";
-        System.out.println(h1.color);
+        // Horse h1 = new Horse();
+        // // h1.color = "white";
+        // System.out.println(h1.color);
 
     }
 }
 
-class Animal {
-    String color;
+// class Animal {
+//     String color;
 
-    Animal() {
-        System.out.println("Animal contructor is called");
-    }
-}
+//     Animal() {
+//         System.out.println("Animal contructor is called");
+//     }
+// }
 
-class Horse extends Animal {
-    Horse() {
-        super.color = "red";
-        System.out.println("Horse contructor is called");
-    }
-}
+// class Horse extends Animal {
+//     Horse() {
+        
+//         super.color = "red";
+//         System.out.println("Horse contructor is called");
+//     }
+// }

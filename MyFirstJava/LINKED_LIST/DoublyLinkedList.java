@@ -35,19 +35,7 @@ public class DoublyLinkedList {
 
     }
 
-    // public void insertFirst(int data) {
-    // Node node = new Node(data);
-
-    // node.next = head;
-    // node.prev = null;
-
-    // if (head != null) {
-    // head.prev = node;
-    // }
-
-    // head = node;
-
-    // }
+    
 
     public void insertLast(int data) {
 
@@ -70,26 +58,6 @@ public class DoublyLinkedList {
         lastNode.prev = travNode;
 
     }
-
-    // public void lastNode(int data) {
-    // Node newNode = new Node(data);
-    // Node first = head;
-
-    // newNode.next = null;
-
-    // if (head == null) {
-    // newNode.prev = null;
-    // head = newNode;
-    // return;
-    // }
-
-    // while (first.next != null) {
-    // first = first.next;
-    // }
-
-    // first.next = newNode;
-    // newNode.prev = first;
-    // }
 
     public void deleteNode(int key) {
         Node temp = head;
