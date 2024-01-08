@@ -16,13 +16,15 @@ public class ExceptionHandling {
         } catch (Exception e) {
             System.out.println("Failed to divide ");
             System.out.println(e);
+        } finally {
+            System.out.println("Code executed");
         }
 
         System.out.println("Program end");
+        
         // nested exception handling
 
         // int arr[] = new int[4];
-        
 
         sc.close();
 
