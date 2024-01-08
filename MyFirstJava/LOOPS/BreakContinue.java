@@ -36,6 +36,7 @@ public class BreakContinue {
         do {
             System.out.print("Enter you number : ");
             int num = sc.nextInt();
+            sc.close();
             if (num % 10 == 0) {
                 continue;
             } else {

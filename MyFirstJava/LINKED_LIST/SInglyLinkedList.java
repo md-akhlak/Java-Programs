@@ -238,47 +238,37 @@ public class SInglyLinkedList {
 
     // remove nodes
     public int removeFirst() {
-
+        int val;
         if (size == 0) {
             System.out.println("LL is empty!");
             return Integer.MIN_VALUE;
         } else if (size == 1) {
-            int val = head.data;
+            val = head.data;
             head = tail = null;
             size = 0;
             return val;
         }
 
-        int val = head.data;
+        val = head.data;
         head = head.next;
         size--;
         return val;
     }
 
+    // reverse bye nodes of linked list
     public void reverse() {
-        Node p = head;
-        Node q = null;
-        Node r = null;
+        Node currNode = head;
+        Node prevNode = null;
+        Node nextNode;
 
-        while (p != null) {
-            r = q;
-            q = p;
-            p = p.next;
-            q.next = r;
+        while (currNode != null) {
+            nextNode = prevNode;
+            prevNode = currNode;
+            currNode = currNode.next;
+            prevNode.next = nextNode;
         }
 
-        head = q;
-
-    }
-
-    public void reverseRec(Node p, Node q) {
-
-        if (p != null) {
-            reverseRec(p, p.next);
-            p.next = q;
-        } else {
-            head = q;
-        }
+        head = prevNode;
 
     }
 
@@ -306,14 +296,12 @@ public class SInglyLinkedList {
 
         ll.addPosition(5, 99);
         ll.printLL();
-        System.out.println("Size is : " + ll.size);
-        // System.out.println(ll.deleteFirstNode());
-        // ll.printLL();
+        System.out.println("Size is : " + SInglyLinkedList.size);
 
         System.out.println(ll.deleteGivenNode(2));
         ll.printLL();
 
-        System.out.println("size is : " + ll.size);
+        System.out.println("size is : " + SInglyLinkedList.size);
 
         System.out.println("max is : " + ll.max());
 
@@ -321,27 +309,16 @@ public class SInglyLinkedList {
 
         System.out.println("sum is : " + ll.sum());
 
-        // System.out.println(ll.removeFirst());
-        // ll.printLL();
-
         System.out.println("sum is : " + ll.sum());
 
         ll.printLL();
 
         System.out.println(ll.search(33));
 
-        // int fnd = ll.recSearch(33);
-        // if (fnd != -1) {
-        // System.out.println("found : " + fnd);
-        // } else {
-        // System.out.println("Not found");
-        // }
-
         ll.reverse();
         ll.printLL();
 
-        // ll.reverseRec(null, head);
-        // ll.printLL();
-
+        System.out.println(ll.removeFirst());
+        ll.printLL();
     }
 }
