@@ -1,24 +1,37 @@
 package LINKED_LIST;
 
-public class SInglyLinkedList {
-    public static class Node {
-        int data;
-        Node next;
+import java.util.LinkedList;
+
+public class SinglyLinkedList {
+
+    private static Node head;
+    private static Node tail;
+    private static int size;
+
+    public SinglyLinkedList() {
+        this.size = 0;
+    }
+
+    public class Node {
+        private int data;
+        private Node next;
 
         public Node(int data) {
             this.data = data;
-            this.next = null;
         }
+
+        public Node(int data, Node next) {
+            this.data = data;
+            this.next = next;
+        }
+
     }
 
-    public static Node head;
-    private static Node tail;
-    private static int size;
 
     void addFirst(int data) {
         // create a new node
         Node newNode = new Node(data);
-        size++;
+
         // base case
         if (head == null) {
             head = tail = newNode;
@@ -30,13 +43,14 @@ public class SInglyLinkedList {
 
         // head -> new node
         head = newNode;
+        size++;
 
     }
 
     public void addLast(int data) {
         // create a node
         Node newNode = new Node(data);
-        size++;
+
         // base case
         if (head == null) {
             head = tail = newNode;
@@ -48,6 +62,8 @@ public class SInglyLinkedList {
 
         // tail -> new node;
         tail = newNode;
+        size++;
+
     }
 
     public void printLL() {
@@ -196,20 +212,19 @@ public class SInglyLinkedList {
         return min;
     }
 
-    public int search(int key) {
+    public Node get(int val) {
         Node temp = head;
-        int index = 0;
+
         while (temp != null) {
-            if (key == temp.data) {
-                System.out.print("Key : " + key + " found at index : ");
-                return index;
+            if (temp.data == val) {
+                return temp;
             }
             temp = temp.next;
-            index++;
-        }
 
-        return -1;
+        }
+        return null;
     }
+
 
     // healper function for recursive search
     public static int healper(Node head, int key) {
@@ -274,7 +289,18 @@ public class SInglyLinkedList {
     }
 
     public static void main(String[] args) {
-        SInglyLinkedList ll = new SInglyLinkedList();
+
+
+        LinkedList<Integer> obj = new LinkedList<>();
+        obj.add(3);
+        obj.add(5);
+        obj.add(9);
+        obj.add(4);
+
+        System.out.println(obj.toString());
+
+
+        SinglyLinkedList ll = new SinglyLinkedList();
 
         // add first
         // ll.printLL();
@@ -291,12 +317,12 @@ public class SInglyLinkedList {
 
         ll.addPosition(5, 99);
         ll.printLL();
-        System.out.println("Size is : " + SInglyLinkedList.size);
+        System.out.println("Size is : " + SinglyLinkedList.size);
 
         System.out.println(ll.deleteGivenNode(2));
         ll.printLL();
 
-        System.out.println("size is : " + SInglyLinkedList.size);
+        System.out.println("size is : " + SinglyLinkedList.size);
 
         System.out.println("max is : " + ll.max());
 
@@ -308,7 +334,7 @@ public class SInglyLinkedList {
 
         ll.printLL();
 
-        System.out.println(ll.search(33));
+        System.out.println(ll.get(33));
 
         ll.reverse();
         ll.printLL();
@@ -316,5 +342,7 @@ public class SInglyLinkedList {
 
         System.out.println(ll.removeFirst());
         ll.printLL();
+
+
     }
 }
