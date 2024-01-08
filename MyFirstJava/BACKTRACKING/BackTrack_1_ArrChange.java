@@ -10,6 +10,12 @@ public class BackTrack_1_ArrChange {
         System.out.println();
     }
 
+
+
+
+
+
+
     public static void changeArr(int arr[], int i, int val) {
         // base case
 
@@ -24,6 +30,12 @@ public class BackTrack_1_ArrChange {
         changeArr(arr, i + 1, val + 1);
         arr[i] -= 2;
     }
+
+
+
+
+
+
 
     public static void main(String[] args) {
         int arr[] = new int[5];
