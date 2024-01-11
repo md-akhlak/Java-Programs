@@ -1,18 +1,18 @@
-package LINKED_LIST;
+package InteviewQuestions;
 
-public class CircularLinkedList {
 
+public class CycleLL {
     private static Node Head;
     private static Node tail;
 
-    public CircularLinkedList() {
+    public CycleLL() {
         int size = 0;
     }
 
 
-    public static class Node {
-        public int data;
-        public Node next;
+    private class Node {
+        int data;
+        Node next;
 
         public Node(int data) {
             this.data = data;
@@ -79,19 +79,44 @@ public class CircularLinkedList {
     }
 
 
-    public static void main(String[] args) {
-        CircularLinkedList cll = new CircularLinkedList();
+    public boolean isCycle() {
+        Node fast = Head;
+        Node slow = Head;
 
-        cll.addFirst(2);
-        cll.addFirst(3);
-        cll.addFirst(6);
-        cll.addFirst(8);
+        while (fast != null && fast.next != null) {
+            fast = fast.next;
+            slow = slow.next;
 
-        cll.display();
+            if (fast == slow) {
+                return true;
+            }
 
-        cll.deleteNode(1);
+        }
 
-        cll.display();
+        return false;
+
     }
 
+    public int countCycle(Node head) {
+        Node fast = Head;
+        Node slow = Head;
+
+        while (fast != null && slow != null) {
+            fast = fast.next;
+            slow = slow.next;
+
+            if (fast == slow) {
+                Node temp = slow;
+                int length = 0;
+
+                do {
+                    temp = temp.next;
+                    length++;
+                } while (temp != slow);
+                return length;
+            }
+        }
+
+        return 0;
+    }
 }

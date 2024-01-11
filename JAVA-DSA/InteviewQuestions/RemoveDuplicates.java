@@ -9,7 +9,7 @@ public class RemoveDuplicates {
         }
         // work
         char curEle = str.charAt(i);
-        if (map[curEle - 'a'] == true) {
+        if (map[curEle - 'a']) {
             // duplicate found
             duplicateString(str, i + 1, newStr, map);
         } else {
@@ -19,7 +19,7 @@ public class RemoveDuplicates {
     }
 
     public static void main(String[] args) {
-        String str = "mohammadakhlak";
-        duplicateString(str, 0, new StringBuilder(""), new boolean[26]);
+        String str = "mohammedan";
+        duplicateString(str, 0, new StringBuilder(), new boolean[26]);
     }
 }

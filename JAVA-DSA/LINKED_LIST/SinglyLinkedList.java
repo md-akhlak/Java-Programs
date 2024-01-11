@@ -13,7 +13,7 @@ public class SinglyLinkedList {
     }
 
     public class Node {
-        private int data;
+        private final int data;
         private Node next;
 
         public Node(int data) {
@@ -108,10 +108,6 @@ public class SinglyLinkedList {
         Node temp = head;
         int i = 0;
 
-        if (head == null) {
-            head = tail = node;
-            return;
-        }
         // insert at first position
         if (index == 0) {
             node.next = head;
@@ -227,7 +223,7 @@ public class SinglyLinkedList {
 
 
     // healper function for recursive search
-    public static int healper(Node head, int key) {
+    public static int helper(Node head, int key) {
         if (head == null) {
             return -1;
         }
@@ -237,7 +233,7 @@ public class SinglyLinkedList {
         }
 
 
-        int getIdx = healper(head.next, key);
+        int getIdx = helper(head.next, key);
 
         if (getIdx == -1) {
             return -1;
@@ -249,7 +245,7 @@ public class SinglyLinkedList {
 
     // recursive function
     public static int recSearch(int key) {
-        return healper(head, key);
+        return helper(head, key);
     }
 
     // remove nodes
@@ -330,7 +326,6 @@ public class SinglyLinkedList {
 
         System.out.println("sum is : " + ll.sum());
 
-        System.out.println("sum is : " + ll.sum());
 
         ll.printLL();
 
