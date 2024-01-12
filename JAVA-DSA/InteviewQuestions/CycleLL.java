@@ -5,12 +5,7 @@ public class CycleLL {
     private static Node Head;
     private static Node tail;
 
-    public CycleLL() {
-        int size = 0;
-    }
-
-
-    private class Node {
+    private static class Node {
         int data;
         Node next;
 
@@ -22,6 +17,7 @@ public class CycleLL {
             this.data = data;
             this.next = next;
         }
+
     }
 
     public void addFirst(int data) {
@@ -79,7 +75,7 @@ public class CycleLL {
     }
 
 
-    public boolean isCycle() {
+    public static boolean isCycle() {  // this algo is known as floyd's cycle finding algorithm
         Node fast = Head;
         Node slow = Head;
 
@@ -97,7 +93,7 @@ public class CycleLL {
 
     }
 
-    public int countCycle(Node head) {
+    public static int countCycle(Node head) {
         Node fast = Head;
         Node slow = Head;
 
@@ -118,5 +114,55 @@ public class CycleLL {
         }
 
         return 0;
+    }
+
+
+    public static Node findNode() {
+        Node fast = Head;
+        Node slow = Head;
+        int length = 0;
+        while (fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if (slow == fast) {
+                length = countCycle(slow);
+                break;
+            }
+        }
+
+        if (length == 0) {
+            return null;
+        }
+
+        Node first = Head;
+        Node second = Head;
+
+        while (length > 0) {
+            second = second.next;
+            length--;
+        }
+
+        while (first != second) {
+            first = first.next;
+            second = second.next;
+        }
+
+        return first;
+    }
+
+    public static void main(String[] args) {
+
+        CycleLL cll = new CycleLL();
+
+        cll.addFirst(3);
+        cll.addFirst(2);
+        cll.addFirst(1);
+        cll.addFirst(9);
+        cll.addFirst(5);
+
+        cll.display();
+
+
     }
 }
