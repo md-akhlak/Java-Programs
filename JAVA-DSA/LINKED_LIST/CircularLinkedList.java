@@ -5,6 +5,8 @@ public class CircularLinkedList {
     private static Node Head;
     private static Node tail;
 
+    private static int flag = 0;
+
     public CircularLinkedList() {
         int size = 0;
     }
@@ -41,15 +43,24 @@ public class CircularLinkedList {
     public void display() {
         Node temp = Head;
 
-        if (Head != null) {
-            do {
-                System.out.print(temp.data + "->");
-                temp = temp.next;
-            } while (temp != Head);
+        do {
+            System.out.print(temp.data + "->");
+            temp = temp.next;
+        } while (temp != Head);
+
+        System.out.println();
+
+    }
+
+
+    public void recDisplay(Node head) {
+        if (head != Head || flag == 0) {
+            flag = 1;
+            System.out.print(head.data + "->");
+            recDisplay(head.next);
         }
-        assert temp != null;
-        System.out.println(temp.data);
-        System.out.println("END");
+        flag = 0;
+        System.out.println();
     }
 
     public void deleteNode(int val) {
@@ -89,9 +100,7 @@ public class CircularLinkedList {
 
         cll.display();
 
-        cll.deleteNode(1);
-
-        cll.display();
+        cll.recDisplay(Head);
     }
 
 }

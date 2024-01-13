@@ -1,6 +1,7 @@
-package Divide_and_Conquer;
+package SORTING;
 
-public class MergeSort {
+public class Merge_Sort {
+
 
     // static void mergingSort(int arr[], int start, int end) {
     // if (start >= end) {
@@ -98,10 +99,8 @@ public class MergeSort {
         System.out.println();
     }
 
-
-
     public static void main(String[] args) {
-        int arr[] = { 9, 3, 4, 1, 6, 5, 8, 7, 2, -3, -5 };
+        int arr[] = {9, 3, 4, 1, 6, 5, 8, 7, 2, -3, -5};
         mergeSort(arr, 0, arr.length - 1);
         displayArray(arr);
 
@@ -111,3 +110,5 @@ public class MergeSort {
         // displayArray(arr);
     }
 }
+
+

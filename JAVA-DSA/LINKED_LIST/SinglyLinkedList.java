@@ -91,49 +91,13 @@ public class SinglyLinkedList {
         Node newNode = new Node(data);
         size++;
         Node temp = head;
-        int i = 0;
 
-        while (i < index - 1) {
+        for (int i = 0; i < index - 1; i++) {
             temp = temp.next;
-            i++;
         }
 
         newNode.next = temp.next;
         temp.next = newNode;
-
-    }
-
-    public void insert(int index, int value) {
-        Node node = new Node(value);
-        Node temp = head;
-        int i = 0;
-
-        // insert at first position
-        if (index == 0) {
-            node.next = head;
-            head = node;
-            size = 0;
-            return;
-        }
-        // insert at any position
-        while (i < index - 1) {
-            temp = temp.next;
-            i++;
-        }
-
-        node.next = temp.next;
-        temp.next = node;
-        size++;
-
-    }
-
-    public int deleteFirstNode() {
-        Node temp = head;
-
-        head = head.next;
-        int val = temp.data;
-
-        return val;
 
     }
 
@@ -284,7 +248,73 @@ public class SinglyLinkedList {
 
     }
 
+    public void insertInSortedLL(int val) {
+        Node node = new Node(val);
+
+        Node p = head;
+        Node q = null;
+
+        while (p != null && p.data < val) {
+            q = p;
+            p = p.next;
+        }
+
+        if (p == head) {
+            node.next = head;
+            head = node;
+        } else {
+            node.next = q.next;
+            q.next = node;
+        }
+
+    }
+
+    public boolean isSorted() {
+        Node temp = head;
+        int x = -1;
+        while (temp != null) {
+            if (temp.data < x) {
+                return false;
+            }
+            x = temp.data;
+            temp = temp.next;
+
+        }
+        return true;
+    }
+
+    public void removeDupInSorted() {
+        Node q = head.next;
+        Node p = head;
+
+        while (q != null && q.next != null) {
+
+            if (p.data != q.data) {
+                p = q;
+                q = q.next;
+            }
+
+            p.next = q.next;
+            q = p.next;
+        }
+    }
+
     public static void main(String[] args) {
+        SinglyLinkedList sll = new SinglyLinkedList();
+        sll.addFirst(12);
+        sll.addFirst(8);
+        sll.addFirst(8);
+        sll.addFirst(8);
+        sll.addFirst(8);
+        sll.addFirst(4);
+        sll.addFirst(2);
+        sll.addFirst(2);
+
+        sll.printLL();
+        System.out.println(sll.isSorted());
+
+        sll.removeDupInSorted();
+        sll.printLL();
 
 
         LinkedList<Integer> obj = new LinkedList<>();
@@ -292,7 +322,6 @@ public class SinglyLinkedList {
         obj.add(5);
         obj.add(9);
         obj.add(4);
-
         System.out.println(obj.toString());
 
 
@@ -334,9 +363,10 @@ public class SinglyLinkedList {
         ll.reverse();
         ll.printLL();
 
-
         System.out.println(ll.removeFirst());
         ll.printLL();
+
+        System.out.println();
 
 
     }

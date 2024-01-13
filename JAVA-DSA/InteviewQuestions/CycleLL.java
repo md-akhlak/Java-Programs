@@ -151,6 +151,49 @@ public class CycleLL {
         return first;
     }
 
+    //    happy number
+    public static boolean happyNumber(int n) {
+        int fast = n;
+        int slow = n;
+
+        do {
+            slow = findSquare(n);
+            fast = findSquare(findSquare(n));
+        } while (slow != fast);
+
+        if (slow == 1) {
+            return true;
+        }
+
+        return false;
+
+    }
+
+    public static int findSquare(int num) {
+        int ans = 0;
+
+        while (num > 0) {
+            int rem = num % 10;
+            ans = ans + (ans * rem);
+            num = num / 10;
+        }
+        return ans;
+
+    }
+
+    public Node middleNode(){
+        Node slow = Head;
+        Node fast = Head;
+
+        while(fast != null){
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        return slow;
+    }
+
+
     public static void main(String[] args) {
 
         CycleLL cll = new CycleLL();
