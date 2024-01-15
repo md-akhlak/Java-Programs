@@ -248,6 +248,29 @@ public class SinglyLinkedList {
 
     }
 
+
+    public void reverse2() {
+        if (head == null) {
+            return;
+        }
+        Node preset = head;
+        Node prev = null;
+        Node next = preset.next;
+
+        while (preset != null) {
+            preset.next = prev;
+            prev = preset;
+
+            if (next != null) {
+                next = next.next;
+            }
+        }
+
+        head = prev;
+
+
+    }
+
     public void insertInSortedLL(int val) {
         Node node = new Node(val);
 

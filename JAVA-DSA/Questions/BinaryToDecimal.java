@@ -1,4 +1,4 @@
-package Qusestions;
+package Questions;
 
 import java.util.Scanner;
 
@@ -17,7 +17,7 @@ public class BinaryToDecimal {
             binNum = binNum / 10;
 
         }
-        System.out.println("decinam of " + myNum + " = " + decNum);
+        System.out.println("decimal of " + myNum + " = " + decNum);
     }
 
     public static void main(String[] args) {

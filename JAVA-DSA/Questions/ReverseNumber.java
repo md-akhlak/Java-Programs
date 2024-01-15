@@ -1,4 +1,4 @@
-package Qusestions;
+package Questions;
 
 public class ReverseNumber {
     public static void main(String[] args) {

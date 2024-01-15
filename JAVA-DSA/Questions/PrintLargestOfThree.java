@@ -1,10 +1,15 @@
-package Qusestions;
+package Questions;
+
+import java.util.Scanner;
 
 public class PrintLargestOfThree {
     public static void main(String[] args) {
-        int a = 70;
-        int b = 90;
-        int c = 300;
+
+
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        int c = sc.nextInt();
 
         if (a > b && a > c) {
             System.out.print("The lasgst is a " + a);
