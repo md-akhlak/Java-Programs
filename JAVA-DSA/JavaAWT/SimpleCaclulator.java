@@ -4,13 +4,13 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class SimpleCalulator extends JFrame implements ActionListener {
+public class SimpleCaclulator extends JFrame implements ActionListener {
 
     JLabel l1, l2, l3;
     JButton btn;
     JTextField t1, t2, t3;
 
-    SimpleCalulator() {
+    SimpleCaclulator() {
         l1 = new JLabel("Enter first number : ");
         l2 = new JLabel("Enter Second number : ");
         l3 = new JLabel("OUPUT is => ");
@@ -49,7 +49,7 @@ public class SimpleCalulator extends JFrame implements ActionListener {
     }
 
     public static void main(String[] args) {
-        SimpleCalulator obj = new SimpleCalulator();
+        SimpleCaclulator obj = new SimpleCaclulator();
         obj.setVisible(true);
         obj.setLocation(500, 500);
     }

@@ -28,11 +28,8 @@ public class CustomQueue {
     public boolean insert(int val) throws Exception {
         if (isFull()) {
             throw new Exception("Queue is full");
-
         }
-
         data[end++] = val;
-
         return true;
     }
 
@@ -40,7 +37,6 @@ public class CustomQueue {
         if (isEmpty()) {
             throw new Exception("Queue is empty");
         }
-
         int rem = data[0];
 
 //        shifting element towards left
@@ -48,9 +44,7 @@ public class CustomQueue {
         for (int i = 1; i < end; i++) {
             data[i - 1] = data[i];
         }
-
         end--;
-
         return rem;
     }
 

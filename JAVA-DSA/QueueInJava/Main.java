@@ -18,7 +18,6 @@ public class Main {
         customQueue.display();
         System.out.println(customQueue.remove());
         System.out.println(customQueue.front());
-
         customQueue.display();
     }
 }

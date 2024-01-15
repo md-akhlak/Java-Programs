@@ -1,0 +1,13 @@
+physical data structure 
+-> physical data modules describes how the system should be implemented using specific DBMS system.
+-> it elaborate the logical data modules 
+-> it deals with storage, indexing, and performance optimization.
+
+Logical Data structure
+-> it describes how the system should be implemented regardless the DBMS.
+-> focuses on data structure relationships and modules.
+
+asymptotic notation
+-> asymptotic notation describes the performance or efficiency of the algorithm
+-> it provides a way to analyze the behavior of the algorithm.
+-> the commonly used asymptotic notation are :- Big O, Big Omega, Big Theta;
