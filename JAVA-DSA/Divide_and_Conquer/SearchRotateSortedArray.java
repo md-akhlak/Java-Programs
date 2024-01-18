@@ -19,20 +19,16 @@ public class SearchRotateSortedArray {
             if (arr[start] <= arr[mid]) {
 
                 if (arr[start] <= key && key <= arr[mid]) {
-                    return end = mid - 1;
-//                    return searchArray(arr, start, mid - 1, key);
+                    return searchArray(arr, start, mid - 1, key);
                 } else {
-                    return start = mid + 1;
-//                    return searchArray(arr, mid + 1, end, key);
+                    return searchArray(arr, mid + 1, end, key);
                 }
             } else {
 
                 if (arr[mid] <= key && key <= arr[end]) {
-                    return start = mid + 1;
-//                    return searchArray(arr, mid + 1, end, key);
+                    return searchArray(arr, mid + 1, end, key);
                 } else {
-                    return end = mid - 1;
-//                    return searchArray(arr, start, mid - 1, key);
+                    return searchArray(arr, start, mid - 1, key);
                 }
             }
         }
@@ -74,17 +70,56 @@ public class SearchRotateSortedArray {
 
     }
 
+    public static int searchArr(int[] nums, int target) {
+        int start = 0;
+        int end = nums.length - 1;
+
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            if (target == nums[mid]) {
+                return mid;
+            }
+
+            while (start < mid && nums[start] == nums[mid]) {
+                start++;
+            }
+
+            if (nums[start] <= nums[mid]) {
+
+                if (nums[start] <= target && target < nums[mid]) {
+                    end = mid - 1;
+                } else {
+                    start = mid + 1;
+                }
+            } else {
+                if (nums[mid] < target && target <= nums[end]) {
+                    start = mid + 1;
+                } else {
+                    end = mid - 1;
+                }
+            }
+
+        }
+
+        return -1;
+
+    }
+
     public static void main(String[] args) {
-        int arr[] = {1, 0, 1, 1, 1};
+        int arr[] = {1, 1, 1, 0, 1};
 //
-//        int target = searchArray(arr, 0, arr.length - 1, 99);
-//        System.out.println(target);
-//
-//        System.out.println(searchArray(arr, 0, arr.length - 1, 4));
+        int target = searchArray(arr, 0, arr.length - 1, 99);
+        System.out.println(target);
+
+        System.out.println(searchArray(arr, 0, arr.length - 1, 4));
 
 
         boolean x = search(arr, 0);
         System.out.println(x);
+
+        int val = searchArr(arr, 0);
+        System.out.println(val);
 
 
     }
