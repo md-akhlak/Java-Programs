@@ -90,6 +90,47 @@ public class BST {
             display2(node.left, level + 1);
         }
     }
+
+//    traversal type
+
+    //    preorder
+    public void preOrder() {
+        preOrder(root);
+    }
+
+    private void preOrder(Node node) {
+        if (node == null) return;
+
+        System.out.println(node.val);
+        preOrder(node.left);
+        preOrder(node.right);
+    }
+
+    //    inorder
+    public void inOder(Node right) {
+        inOrder(root);
+    }
+
+    private void inOrder(Node node) {
+        if (node == null) return;
+
+        inOrder(node.left);
+        System.out.println(node.val);
+        inOder(node.right);
+    }
+
+    public void postOrder() {
+        postOrder(root);
+    }
+
+    private void postOrder(Node node) {
+        if (node == null)
+            return;
+
+        postOrder(node.left);
+        postOrder(node.right);
+        System.out.println(node.val);
+    }
 }
 
 
