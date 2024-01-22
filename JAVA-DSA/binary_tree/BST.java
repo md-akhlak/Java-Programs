@@ -1,5 +1,8 @@
 package binary_tree;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class BST {
 
     public class Node {
@@ -13,24 +16,12 @@ public class BST {
             this.val = val;
         }
 
-        public boolean isEmpty() {
-            return root == null;
-        }
-
-        public int height(Node node) {
-            return node.height;
-        }
-
-        public int getValue(int val) {
-            return getValue(val);
-        }
-
     }
 
     private Node root;
 
     public void insert(int value) {
-
+        insert(root, 3);
     }
 
     private Node insert(Node node, int value) {
@@ -64,22 +55,16 @@ public class BST {
 
     }
 
-    public void populate(int arr[]) {
-        for (int i = 0; i < arr.length; i++) {
-            this.insert(arr[i]);
-        }
-    }
-
     public void displayBest() {
-        display2(root, 0);
+        displayBest(root, 0);
     }
 
-    private void display2(Node node, int level) {
+    private void displayBest(Node node, int level) {
         if (node == null) {
             return;
         }
 
-        display2(node.right, level + 1);
+        displayBest(node.right, level + 1);
 
         if (level != 0) {
             for (int i = 0; i < level - 1; i++) {
@@ -87,7 +72,7 @@ public class BST {
             }
             System.out.println(node.val);
         } else {
-            display2(node.left, level + 1);
+            displayBest(node.left, level + 1);
         }
     }
 
@@ -130,6 +115,42 @@ public class BST {
         postOrder(node.left);
         postOrder(node.right);
         System.out.println(node.val);
+    }
+
+
+    public void leverOrder(Node node) {
+        if (node == null) return;
+
+        Queue<Node> tree = new LinkedList<>();
+
+        tree.add(root);
+        tree.add(null);
+
+        while (!tree.isEmpty()) {
+            Node currNode = tree.remove();
+            if (node == null) {
+                System.out.println();
+
+                if (tree.isEmpty()) {
+                    break;
+                } else {
+                    tree.add(null);
+                }
+            } else {
+                System.out.println(node.val);
+                if (node.left != null)
+                    tree.add(node.left);
+                if (node.right != null)
+                    tree.add(node.right);
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        BST tree = new BST();
+
+
     }
 }
 

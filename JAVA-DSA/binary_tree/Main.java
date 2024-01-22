@@ -14,7 +14,8 @@ public class Main {
 
         int arr[] = {8,3,6,2,1,4,8,9,12};
         BST tree = new BST();
-        tree.display();
+
+
 
 
     }
