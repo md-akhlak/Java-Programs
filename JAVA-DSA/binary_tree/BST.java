@@ -39,6 +39,81 @@ public class BST {
         return node;
     }
 
+    public void insertNode(int ele) {
+        Node t = root;
+        Node r, p;
+
+        if (root == null) {
+            p = new Node(ele);
+            p.val = ele;
+            p.left = p.right = null;
+        }
+
+        while (t != null) {
+            r = t;
+            if (ele == t.val) {
+                return;
+            } else if (ele < t.val) {
+                t = t.left;
+            } else {
+                t = t.right;
+            }
+        }
+
+    }
+
+    private void insertNode(Node node, int ele) {
+        Node r = null;
+        Node p = new Node(ele);
+
+        if (node == null) {
+            node = new Node(ele);
+            root = node;
+            return;
+        }
+
+        while (node != null) {
+            r = node;
+            if (ele == node.val)
+                return;
+            else if (ele < node.val)
+                node = node.left;
+            else
+                node = node.right;
+
+        }
+
+        p.left = p.right = null;
+
+        if (p.val < r.val)
+            r.left = p;
+        else
+            r.right = p;
+
+    }
+
+    public void recInsert(int ele) {
+        recInsert(root, ele);
+    }
+
+    private Node recInsert(Node root, int ele) {
+        Node eleNode;
+        if (root == null) {
+            eleNode = new Node(ele);
+            eleNode.val = ele;
+            eleNode.left = eleNode.right = null;
+            return eleNode;
+        }
+
+        if (ele < root.val) {
+            root.left = recInsert(root.left, ele);
+        } else {
+            root.right = recInsert(root.right, ele);
+        }
+
+        return root;
+    }
+
     public void display() {
         display(root, "Root Node");
     }
@@ -118,7 +193,7 @@ public class BST {
     }
 
 
-    public void leverOrder(Node node) {
+    public void levelOrder(Node node) {
         if (node == null) return;
 
         Queue<Node> tree = new LinkedList<>();
