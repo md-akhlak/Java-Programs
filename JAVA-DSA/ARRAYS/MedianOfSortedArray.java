@@ -36,8 +36,8 @@ public class MedianOfSortedArray {
     }
 
     public static void main(String[] args) {
-        int arr1[] = {1, 2, 5, 7, 9};
-        int arr2[] = {3, 6, 8, 10};
+        int arr1[] = {1, 2, 5, 23, 9};
+        int arr2[] = {3, 6};
 
         double merged = mergedArrays(arr1, arr2);
 
