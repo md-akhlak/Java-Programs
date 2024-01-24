@@ -222,6 +222,27 @@ public class BST {
 
     }
 
+    public Node sortedArrayToBST(int arr[]) {
+        return createBST(arr, 0, arr.length - 1);
+    }
+
+    private Node createBST(int arr[], int start, int end) {
+
+        if (start > end) {
+            return null;
+        }
+
+        int mid = start + (end - start) / 2;
+
+        Node node = new Node(arr[mid]);
+
+        node.left = createBST(arr, start, mid - 1);
+        node.right = createBST(arr, mid + 1, end);
+
+        return node;
+
+    }
+
     public static void main(String[] args) {
         BST tree = new BST();
 
