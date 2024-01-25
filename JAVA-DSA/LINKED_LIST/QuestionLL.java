@@ -226,6 +226,94 @@ public class QuestionLL {
         return false;
     }
 
+    public static Node removeNthFromEnd(int n) {
+        return removeNthFromEnd(Head, n);
+    }
+
+    private static Node removeNthFromEnd(Node node, int n) {
+        Node slow = Head;
+        Node fast = Head;
+
+        int i = 0;
+        while (i < n) {
+            fast = fast.next;
+            i++;
+        }
+
+        if (fast == null) return slow.next;
+
+        while (fast.next != null) {
+            slow = slow.next;
+            fast = fast.next;
+        }
+
+        slow.next = slow.next.next;
+
+        return Head;
+
+    }
+
+    public Node mergeTwoLists(Node list1, Node list2) {
+        Node head = new Node(0);
+        Node curr = head;
+        while (list1 != null && list2 != null) {
+            if (list1.data <= list2.data) {
+                curr.next = list1;
+                list1 = list1.next;
+            } else {
+                curr.next = list2;
+                list2 = list2.next;
+            }
+            curr = curr.next;
+        }
+
+        while (list1 != null) {
+            curr.next = list1;
+            list1 = list1.next;
+        }
+
+        while (list2 != null) {
+            curr.next = list2;
+            list2 = list2.next;
+
+        }
+
+        return head.next;
+
+    }
+
+
+    public Node addTwoNumbers(Node l1, Node l2) {
+        return rec(l1, l2);
+    }
+
+    private Node rec(Node l1, Node l2) {
+        if (l1 == null && l2 == null) {
+            return null;
+        }
+
+        if (l1 == null) {
+            l1 = new Node(0);
+        }
+
+        if (l2 == null) {
+            l2 = new Node(0);
+        }
+
+        int result = l1.data + l2.data;
+
+        if (result > 9) {
+            result = result % 10;
+            if (l1.next == null) {
+                l1.next = new Node(1);
+            } else {
+                l1.next.data = l1.next.data + 1;
+            }
+        }
+
+        return new Node(result, rec(l1.next, l2.next));
+    }
+
 
     public static void main(String[] args) {
 
@@ -248,8 +336,8 @@ public class QuestionLL {
 
         ll.removeDup(Head);
         ll.display();
-
-        System.out.println(ll.isCyclic(Head));
+        System.out.println(removeNthFromEnd(2));
+//        System.out.println(ll.isCyclic(Head));
 
 
 //        ll.isPalindrome();
