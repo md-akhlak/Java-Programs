@@ -14,8 +14,10 @@ public class GetDirectionPath {
                 y++;
             } else if (dir == 'W' || dir == 'w') {
                 x--;
-            } else {
+            } else if(dir == 'E' ||dir == 'e') {
                 x++;
+            }else {
+                System.out.println("INCORRECT PATH");
             }
         }
         int X2 = x * x;
@@ -28,9 +30,10 @@ public class GetDirectionPath {
 
         // S->south , N-> north, E->east, W->west
 
-        String path = "SNNNS";
-
+        String path = "esnweeee";
+        String path2 = "EEqN";
         System.out.println(getShortestPath(path));
+        System.out.println(getShortestPath(path2));
 
     }
 }
