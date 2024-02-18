@@ -22,6 +22,7 @@ class Base {
 
 class Derived extends Base {
     void displayDerivedClass() {
+        super.displayBase();
         System.out.println("This is Derived class");
     }
 }

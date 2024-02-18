@@ -5,12 +5,10 @@ import java.util.Queue;
 
 public class BST {
 
-    public class Node {
+    public static class Node {
         private Node left;
         private int val;
         private Node right;
-
-        private int height;
 
         public Node(int val) {
             this.val = val;
@@ -39,57 +37,28 @@ public class BST {
         return node;
     }
 
-    public void insertNode(int ele) {
-        Node t = root;
-        Node r, p;
-
+    public Node create(Node root, int val) {
         if (root == null) {
-            p = new Node(ele);
-            p.val = ele;
-            p.left = p.right = null;
+            root = new Node(val);
+            return root;
         }
 
-        while (t != null) {
-            r = t;
-            if (ele == t.val) {
-                return;
-            } else if (ele < t.val) {
-                t = t.left;
-            } else {
-                t = t.right;
-            }
+        if (root.val > val) {
+            root.left = create(root.left, val);
+        } else {
+            root.right = create(root.right, val);
         }
-
+        return root;
     }
 
-    private void insertNode(Node node, int ele) {
-        Node r = null;
-        Node p = new Node(ele);
-
-        if (node == null) {
-            node = new Node(ele);
-            root = node;
-            return;
-        }
-
-        while (node != null) {
-            r = node;
-            if (ele == node.val)
-                return;
-            else if (ele < node.val)
-                node = node.left;
-            else
-                node = node.right;
-
-        }
-
-        p.left = p.right = null;
-
-        if (p.val < r.val)
-            r.left = p;
-        else
-            r.right = p;
-
+    public boolean search(Node root, int key) {
+        if (root == null)
+            return false;
+        if (root.val == key)
+            return true;
+        if (root.val > key)
+            return search(root.left, key);
+        return search(root.right, key);
     }
 
     public void recInsert(int ele) {
@@ -127,19 +96,18 @@ public class BST {
         display(node.left, "Left child of : " + node.val);
         display(node.right, "Right chile of : " + node.val);
 
-
     }
 
     public void displayBest() {
-        displayBest(root, 0);
+        display2(root, 0);
     }
 
-    private void displayBest(Node node, int level) {
+    private void display2(Node node, int level) {
         if (node == null) {
             return;
         }
 
-        displayBest(node.right, level + 1);
+        display2(node.right, level + 1);
 
         if (level != 0) {
             for (int i = 0; i < level - 1; i++) {
@@ -147,36 +115,39 @@ public class BST {
             }
             System.out.println(node.val);
         } else {
-            displayBest(node.left, level + 1);
+            display2(node.left, level + 1);
         }
+
     }
 
-//    traversal type
+    // traversal type
 
-    //    preorder
+    // preorder
     public void preOrder() {
         preOrder(root);
     }
 
     private void preOrder(Node node) {
-        if (node == null) return;
+        if (node == null)
+            return;
 
         System.out.println(node.val);
         preOrder(node.left);
         preOrder(node.right);
     }
 
-    //    inorder
-    public void inOder(Node right) {
+    // inorder
+    public void inOrder() {
         inOrder(root);
     }
 
     private void inOrder(Node node) {
-        if (node == null) return;
+        if (node == null)
+            return;
 
         inOrder(node.left);
         System.out.println(node.val);
-        inOder(node.right);
+        inOrder(node.right);
     }
 
     public void postOrder() {
@@ -192,9 +163,9 @@ public class BST {
         System.out.println(node.val);
     }
 
-
     public void levelOrder(Node node) {
-        if (node == null) return;
+        if (node == null)
+            return;
 
         Queue<Node> tree = new LinkedList<>();
 
@@ -243,11 +214,51 @@ public class BST {
 
     }
 
-    public static void main(String[] args) {
-        BST tree = new BST();
+    // delete the node
+    public Node delete(Node root, int key) {
+        if (root.val < key) {
+            root.right = delete(root.right, key);
+        } else if (root.val > key) {
+            root.left = delete(root.left, key);
+        }
 
+        else {
+            // case 1:
+            if (root.left == null && root.right == null) {
+                return null;
+            }
+
+            // case 2:
+            if (root.left == null) {
+                return root.right;
+            } else if (root.right == null) {
+                return root.left;
+            }
+
+            Node is = inorderSuccessor(root.right);
+            root.right = is.right;
+            root.right = delete(root.right, is.val);
+        }
+        return root;
+    }
+
+    private Node inorderSuccessor(Node root) {
+        while (root.left != null) {
+            root = root.left;
+        }
+        return root;
+    }
+
+    public static void main(String[] args) {
+        int arr[] = { 4, 2, 6, 8, 3, 9, 1 };
+        Node root = null;
+
+        BST bst = new BST();
+        bst.create(root, 5);
+
+        for (int i = 0; i < arr.length; i++) {
+            bst.create(root, i);
+        }
 
     }
 }
-
-

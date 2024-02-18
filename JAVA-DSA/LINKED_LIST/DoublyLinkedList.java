@@ -11,12 +11,6 @@ public class DoublyLinkedList {
             this.data = data;
         }
 
-        // public Node(int data, Node next, Node prev) {
-        // this.data = data;
-        // this.next = next;
-        // this.prev = prev;
-        // }
-
     }
 
     private Node head;
@@ -104,7 +98,6 @@ public class DoublyLinkedList {
             last = node;
             node = node.next;
         }
-        // System.out.println("");
 
         System.out.println("Reverse direction");
         while (last != null) {

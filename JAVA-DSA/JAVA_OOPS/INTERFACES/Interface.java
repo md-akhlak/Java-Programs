@@ -4,7 +4,7 @@ package JAVA_OOPS.INTERFACES;
  * -> All methods are public, abstract, and without implementation.
  * -> Used to achieve total abstraction.
  * -> Multiple Inheritace
- * -> Variables in the interface are final,, public and static. 
+ * -> Variables in the interface are final, public and static. 
  */
 
 interface Student {
@@ -13,17 +13,14 @@ interface Student {
     public void show();
 }
 
-interface CSE {
-    public void roll(int x);
+// interface CSE {
+//     public void roll(int x);
 
-    public void show();
-}
+//     public void show();
+// }
 
-abstract class First {
 
-}
-
-class newStu extends First implements Student, CSE {
+class newStu implements Student {
     public void roll(int x) {
         System.out.println("Roll is roll: " + x);
     }

@@ -47,21 +47,7 @@ public class Questions {
 
     }
 
-    public static void pushAtBottom(Stack<Integer> s, int data) {
-        if (s.isEmpty()) {
-            s.push(data);
-            return;
-        }
-
-        int top = s.pop();
-        pushAtBottom(s, data);
-        s.push(top);
-
-
-    }
-
-
-    //    reverse string
+    // reverse string
     public static String reverseString(String str) {
         Stack<Character> ch = new Stack<>();
         int index = 0;
@@ -82,7 +68,7 @@ public class Questions {
 
     }
 
-    //    reverse stack
+    // reverse stack
     public static void reverseStack(Stack<Integer> s) {
         if (s.isEmpty()) {
             return;
@@ -91,12 +77,53 @@ public class Questions {
         reverseStack(s);
         pushAtBottom(s, top);
     }
-//    print stack
+    // print stack
 
     public static void printStack(Stack<Integer> s) {
         while (!s.isEmpty()) {
             System.out.println(s.pop());
         }
+    }
+
+    public static void pushAtBottom(Stack<Integer> stack, int data) {
+        if (stack.isEmpty()) {
+            stack.push(data);
+            return;
+        }
+
+        int top = stack.pop();
+        pushAtBottom(stack, data);
+        stack.push(top);
+    }
+
+    public static String revString(String str) {
+        Stack<Character> s = new Stack<>();
+
+        for (int i = 0; i < str.length(); i++) {
+            s.push(str.charAt(i));
+        }
+
+        StringBuilder result = new StringBuilder("");
+        while (!s.isEmpty()) {
+            int curr = s.pop();
+            result.append(curr);
+        }
+        return result.toString();
+
+    }
+
+    public static void main(String[] args) {
+        Stack<Integer> stack = new Stack<>();
+        stack.push(8);
+        stack.push(1);
+        stack.push(4);
+        stack.push(6);
+
+        reverseStack(stack);
+        printStack(stack);
+
+
+
     }
 
 }

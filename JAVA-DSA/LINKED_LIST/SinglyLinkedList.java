@@ -27,7 +27,6 @@ public class SinglyLinkedList {
 
     }
 
-
     void addFirst(int data) {
         // create a new node
         Node newNode = new Node(data);
@@ -185,7 +184,6 @@ public class SinglyLinkedList {
         return null;
     }
 
-
     // healper function for recursive search
     public static int helper(Node head, int key) {
         if (head == null) {
@@ -195,7 +193,6 @@ public class SinglyLinkedList {
         if (head.data == key) {
             return 0;
         }
-
 
         int getIdx = helper(head.next, key);
 
@@ -248,7 +245,6 @@ public class SinglyLinkedList {
 
     }
 
-
     public void reverse2() {
         if (head == null) {
             return;
@@ -267,7 +263,6 @@ public class SinglyLinkedList {
         }
 
         head = prev;
-
 
     }
 
@@ -322,6 +317,23 @@ public class SinglyLinkedList {
         }
     }
 
+    public static Node conaconate(Node list1, Node list2) {
+        if (list1 == null) {
+            return list2;
+        }
+        if (list2 == null) {
+            return list1;
+        }
+
+        Node curr = list1;
+        while (curr.next != null) {
+            curr = curr.next;
+        }
+
+        curr.next = list2;
+        return list1;
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.addFirst(12);
@@ -339,14 +351,12 @@ public class SinglyLinkedList {
         sll.removeDupInSorted();
         sll.printLL();
 
-
         LinkedList<Integer> obj = new LinkedList<>();
         obj.add(3);
         obj.add(5);
         obj.add(9);
         obj.add(4);
         System.out.println(obj.toString());
-
 
         SinglyLinkedList ll = new SinglyLinkedList();
 
@@ -378,7 +388,6 @@ public class SinglyLinkedList {
 
         System.out.println("sum is : " + ll.sum());
 
-
         ll.printLL();
 
         System.out.println(ll.get(33));
@@ -391,6 +400,19 @@ public class SinglyLinkedList {
 
         System.out.println();
 
+        SinglyLinkedList x = new SinglyLinkedList();
+        x.addFirst(2);
+        x.addFirst(5);
+
+
+        SinglyLinkedList y = new SinglyLinkedList();
+        y.addFirst(9);
+        y.addFirst(10);
+
+
+       
 
     }
+
+    
 }
