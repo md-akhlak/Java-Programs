@@ -30,6 +30,20 @@ public class Median {
         }
     }
 
+    ListNode root = null;
+
+    public ListNode swap(ListNode left, ListNode right){
+        ListNode temp = root;
+
+        while(temp != null){
+            temp = left.left;
+            left.left = right.right;
+            right.right = temp;
+        }
+
+        return temp;
+    }
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
         return rec(l1, l2);
     }

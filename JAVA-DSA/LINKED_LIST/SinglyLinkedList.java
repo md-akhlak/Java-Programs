@@ -334,6 +334,44 @@ public class SinglyLinkedList {
         return list1;
     }
 
+    public Node mergedList(Node l1, Node l2) {
+        if (l1 == null)
+            return l2;
+        if (l2 == null)
+            return l1;
+
+        Node merged = new Node(0);
+
+        if (l1.data < l2.data) {
+            merged.next = l1;
+            l1 = l1.next;
+        } else {
+            merged.next = l2;
+            l2 = l2.next;
+        }
+
+        Node temp = merged;
+
+        while (l1 != null && l1 != null) {
+            if (l1.data < l2.data) {
+                temp.next = l1;
+                l1 = l1.next;
+            } else {
+                temp.next = l2;
+                l2 = l2.next;
+            }
+            temp = temp.next;
+        }
+
+        if (l1 != null)
+            temp.next = l1;
+        if (l1 != null)
+            temp.next = l2;
+
+        return merged;
+
+    }
+
     public static void main(String[] args) {
         SinglyLinkedList sll = new SinglyLinkedList();
         sll.addFirst(12);
@@ -404,15 +442,10 @@ public class SinglyLinkedList {
         x.addFirst(2);
         x.addFirst(5);
 
-
         SinglyLinkedList y = new SinglyLinkedList();
         y.addFirst(9);
         y.addFirst(10);
 
-
-       
-
     }
 
-    
 }

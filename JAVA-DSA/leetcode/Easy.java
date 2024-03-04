@@ -121,6 +121,38 @@ public class Easy {
         return false;
     }
 
+    public static String reverseString(String str) {
+        int left = 0;
+        int right = str.length() - 1;
+
+        StringBuilder sb = new StringBuilder(str);
+
+        while (left < right) {
+            char temp = str.charAt(left);
+            sb.setCharAt(left, sb.charAt(right));
+            sb.setCharAt(right, temp);
+        }
+
+        return sb.toString();
+    }
+
+    public static String reverseStringWords(String str) {
+        String words[] = str.split("\\str+");
+
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = words.length - 1; i >= 0; i--) {
+            sb.append(words[i]);
+            if (i != 0) {
+                sb.append(" ");
+            }
+        }
+
+        String result = sb.toString().trim();
+
+        return result;
+    }
+
     public static void main(String[] args) {
         String s = "loveleetcode";
 
