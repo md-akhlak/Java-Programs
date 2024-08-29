@@ -1,9 +1,5 @@
 package leetcode;
 
-import java.util.ArrayList;
-
-import javax.swing.tree.TreeNode;
-
 public class Easy {
 
     int sum = 0;
@@ -14,9 +10,9 @@ public class Easy {
     }
 
     class Node {
-        static Node left;
+        Node left;
         int value;
-        static Node right;
+        Node right;
 
         public Node() {
         }
@@ -151,6 +147,20 @@ public class Easy {
         String result = sb.toString().trim();
 
         return result;
+    }
+
+    public static void reverseCharString(char ch[]){
+        int left = 0;
+        int right = ch.length - 1;
+
+        while(left < right){
+            char temp = ch[left];;
+            ch[left] = ch[right];
+            ch[right] = temp;
+
+            left++;
+            right--;
+        }
     }
 
     public static void main(String[] args) {

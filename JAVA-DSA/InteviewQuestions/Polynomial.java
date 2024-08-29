@@ -23,6 +23,8 @@ public class Polynomial {
         n = sc.nextInt();
 
         p = new Term(n, n);
+
+        sc.close();
     }
 
 }

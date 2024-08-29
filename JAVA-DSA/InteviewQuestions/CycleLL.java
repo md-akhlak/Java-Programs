@@ -13,11 +13,6 @@ public class CycleLL {
             this.data = data;
         }
 
-        public Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
-        }
-
     }
 
     public void addFirst(int data) {
@@ -71,9 +66,7 @@ public class CycleLL {
             node = node.next;
         } while (node != Head);
 
-
     }
-
 
     public static boolean isCycle() {  // this algo is known as floyd's cycle finding algorithm
         Node fast = Head;
@@ -86,11 +79,8 @@ public class CycleLL {
             if (fast == slow) {
                 return true;
             }
-
         }
-
         return false;
-
     }
 
     public static int countCycle(Node head) {

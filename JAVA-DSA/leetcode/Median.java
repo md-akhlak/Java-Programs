@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.nio.channels.Pipe.SourceChannel;
+import java.rmi.server.SocketSecurityException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -32,10 +34,10 @@ public class Median {
 
     ListNode root = null;
 
-    public ListNode swap(ListNode left, ListNode right){
+    public ListNode swap(ListNode left, ListNode right) {
         ListNode temp = root;
 
-        while(temp != null){
+        while (temp != null) {
             temp = left.left;
             left.left = right.right;
             right.right = temp;
@@ -252,5 +254,79 @@ public class Median {
         }
 
         return temp.next;
+    }
+
+    // https://leetcode.com/problems/sort-colors/submissions/1371913066/
+    public static void sortColors(int[] nums) {
+        int low = 0;
+        int mid = 0;
+        int high = nums.length - 1;
+
+        while (mid <= high) {
+            if (nums[mid] == 0) {
+                swap(nums, low, mid);
+                low++;
+                mid++;
+            } else if (nums[mid] == 1) {
+                mid++;
+            } else if (nums[mid] == 2) {
+                swap(nums, mid, high);
+                high--;
+            }
+
+            // switch (nums[mid]) {
+            // case 0:
+            // swap(nums, low, mid);
+            // low++;
+            // mid++;
+            // break;
+            // case 1:
+            // mid++;
+            // break;
+            // case 2:
+            // swap(nums, mid, high);
+            // high--;
+            // break;
+            // }
+
+        }
+    }
+
+    private static void swap(int nums[], int low, int high) {
+        int temp = nums[low];
+        nums[low] = nums[high];
+        nums[high] = temp;
+    }
+
+    public static void display(int arr[]) {
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
+
+    // https://leetcode.com/problems/move-zeroes/
+    public static void moveZeroes(int[] nums) {
+        int j = 0;
+        for(int i = 0; i < nums.length; i++){
+            if(nums[i] != 0){
+                if(i != j){
+                    nums[j] = nums[i];
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
+
+    }
+
+    public static void main(String[] args) {
+        // int arr[] = { 2,0,1};
+        // sortColors(arr);
+        // display(arr);
+
+        int nums[] = { 0, 1, 0, 3, 12,4,7,2,0,0,0,0,5,1,5,7 };
+        moveZeroes(nums);
+        display(nums);
     }
 }

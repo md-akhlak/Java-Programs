@@ -1,6 +1,5 @@
 package binary_tree;
 
-import java.sql.SQLOutput;
 import java.util.LinkedList;
 import java.util.Scanner;
 import java.util.*;
@@ -16,6 +15,8 @@ public class BinaryTree {
 
         public Node(int data) {
             this.data = data;
+            this.left = null;
+            this.right = null;
         }
 
     }
@@ -85,6 +86,7 @@ public class BinaryTree {
         root = new Node(data);
 
         if (data == -1) {
+            sc.close();
             return null;
         }
 
@@ -92,7 +94,7 @@ public class BinaryTree {
         root.left = buildTree(root.left);
         System.out.println("Enter the data for right node " + node.data);
         root.right = buildTree(root.right);
-
+        sc.close();
         return root;
 
     }

@@ -22,9 +22,7 @@ public class AccessModifier {
 
 class Bank {
     public String userName;
-    private String password;
 
     void setPass(String pass) {
-        password = pass;
     }
 }

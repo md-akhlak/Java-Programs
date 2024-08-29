@@ -1,7 +1,5 @@
 package LINKED_LIST;
 
-import SORTING.Merge_Sort;
-
 public class Mergeee {
 
     private static Node Head;
@@ -16,11 +14,6 @@ public class Mergeee {
         public Node(int data) {
             this.data = data;
             this.next = null;
-        }
-
-        public Node(int data, Node next) {
-            this.data = data;
-            this.next = next;
         }
 
     }
@@ -71,6 +64,7 @@ public class Mergeee {
         return slow;
     }
 
+    @SuppressWarnings("null")
     private Node merge(Node head1, Node head2) {
 //        temp node to store data
         Node mergedLL = new Node(-1);

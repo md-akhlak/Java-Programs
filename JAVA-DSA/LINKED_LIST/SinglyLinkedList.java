@@ -9,7 +9,7 @@ public class SinglyLinkedList {
     private static int size;
 
     public SinglyLinkedList() {
-        this.size = 0;
+        SinglyLinkedList.size = 0;
     }
 
     public class Node {
@@ -64,7 +64,6 @@ public class SinglyLinkedList {
         size++;
 
     }
-
     public void printLL() {
         if (tail == null) {
             System.out.println("null");
@@ -362,11 +361,6 @@ public class SinglyLinkedList {
             }
             temp = temp.next;
         }
-
-        if (l1 != null)
-            temp.next = l1;
-        if (l1 != null)
-            temp.next = l2;
 
         return merged;
 

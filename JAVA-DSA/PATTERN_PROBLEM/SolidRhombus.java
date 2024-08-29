@@ -3,6 +3,7 @@ package PATTERN_PROBLEM;
 public class SolidRhombus {
 
     public static void rhombus(int n) {
+        int number = 1;
         for (int i = 1; i <= n; i++) {
             // spacesqwr ;
             for (int j = 1; j <= (n - i); j++) {
@@ -10,7 +11,7 @@ public class SolidRhombus {
             }
             // star
             for (int j = 1; j <= n; j++) {
-                System.out.print("* ");
+                System.out.print(number+" ");
             }
             System.out.println();
         }

@@ -3,22 +3,16 @@ package ARRAYS;
 public class ReverseArray {
 
     public static void reverseArray(int arr[]) {
-        int first = 0;
-        int last = arr.length - 1;
+        int left = 0;
+        int right = arr.length - 1;
 
-        while (first < last) {
-            // swap elements of arrays
-            // int temp = arr[last];
-            // arr[last] = arr[first];
-            // arr[first] = temp;
+        while (left < right) {
+            int temp = arr[left];
+            arr[left] = arr[right];
+            arr[right] = temp;
 
-            int temp = arr[first];
-            arr[first] = arr[last];
-            arr[last] = temp;
-
-            first++;
-            last--;
-
+            left++;
+            right--;
         }
     }
 
@@ -41,7 +35,7 @@ public class ReverseArray {
 
         int arr[] = { 1, 2, 3, 4, 5, 6, 7, 8 };
         display(arr);
-        reverse(arr);
+        reverseArray(arr);
         System.out.println("The array in reverse order is ");
         display(arr);
 
