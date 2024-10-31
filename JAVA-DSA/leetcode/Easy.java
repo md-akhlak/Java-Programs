@@ -1,5 +1,7 @@
 package leetcode;
 
+import java.util.HashMap;
+
 public class Easy {
 
     int sum = 0;
@@ -149,18 +151,64 @@ public class Easy {
         return result;
     }
 
-    public static void reverseCharString(char ch[]){
+    public static void reverseCharString(char ch[]) {
         int left = 0;
         int right = ch.length - 1;
 
-        while(left < right){
-            char temp = ch[left];;
+        while (left < right) {
+            char temp = ch[left];
             ch[left] = ch[right];
             ch[right] = temp;
 
             left++;
             right--;
         }
+    }
+
+    // https://leetcode.com/problems/move-zeroes/
+    public static void moveZeroes(int[] nums) {
+        int j = 0;
+        for (int i = 0; i < nums.length; i++) {
+            if (nums[i] != 0) {
+                if (i != j) {
+                    nums[j] = nums[i];
+                    nums[i] = 0;
+                }
+                j++;
+            }
+        }
+    }
+
+    // https://leetcode.com/problems/number-of-senior-citizens/
+    public static int countSeniors(String[] citizens) {
+        int senior = 0;
+        for (String str : citizens) {
+            if (str.charAt(11) > '6' || str.charAt(11) == '6'
+                    && str.charAt(12) > '0') {
+                senior++;
+            }
+        }
+        return senior;
+    }
+
+    // https://leetcode.com/problems/two-sum/
+    public int[] twoSum(int[] nums, int target) {
+        HashMap<Integer, Integer> map = new HashMap<>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int complement = target - nums[i];
+
+            if (map.containsKey(complement)) {
+                return new int[] {
+                        map.get(complement), i
+                };
+            }
+
+            map.put(complement, i);
+        }
+
+        return new int[0];
+
     }
 
     public static void main(String[] args) {
