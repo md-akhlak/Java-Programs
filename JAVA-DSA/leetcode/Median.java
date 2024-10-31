@@ -305,20 +305,7 @@ public class Median {
         System.out.println();
     }
 
-    // https://leetcode.com/problems/move-zeroes/
-    public static void moveZeroes(int[] nums) {
-        int j = 0;
-        for(int i = 0; i < nums.length; i++){
-            if(nums[i] != 0){
-                if(i != j){
-                    nums[j] = nums[i];
-                    nums[i] = 0;
-                }
-                j++;
-            }
-        }
-
-    }
+    
 
     public static void main(String[] args) {
         // int arr[] = { 2,0,1};
@@ -326,7 +313,6 @@ public class Median {
         // display(arr);
 
         int nums[] = { 0, 1, 0, 3, 12,4,7,2,0,0,0,0,5,1,5,7 };
-        moveZeroes(nums);
         display(nums);
     }
 }
